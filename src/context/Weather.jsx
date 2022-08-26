@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
@@ -22,14 +23,29 @@ const Weather = ({children}) => {
         let lang = 'tr';
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=${units}`;
 
+         
+
         try {
-            
+        
+                const response = await axios.get(url)
+                if(response.status == 200){
+
+                    console.log(response);
+                }
+        
+        
+       
+        // const {main , name , sys, weather} = response.data
+        // let iconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+        }
+        catch {
+
         }
     }
 
 
   return (
-    <WeatherContext.Provider value={{searchText, setSearchText}}>
+    <WeatherContext.Provider value={{searchText, setSearchText , getData}}>
 
         {children}
 
