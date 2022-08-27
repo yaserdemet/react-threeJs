@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useWeatherContext } from "../context/Weather";
+import WeatherCard from "./WeatherCard";
 
 const Main = () => {
-    const {searchText , setSearchText , getData} =  useWeatherContext()
+    const {searchText , setSearchText , getData , data , setData} =  useWeatherContext()
     // ? üzerine cift tıkla ctrl cift space
 
 
@@ -14,8 +15,9 @@ const Main = () => {
             e.preventDefault()
             getData()
             setSearchText("")
+            //! bunun çalışması için inputun value değerine state değerini ata
     }
-
+// ? value state ile kontrol ediliyorsa kontrollü komponenttir.
   return (
     <section className="main">
       <form onSubmit={handleSubmit}>
@@ -25,7 +27,16 @@ const Main = () => {
       </form>
 
       <div className="container">
-        <ul className="cities">dawdwa</ul>
+        <ul className="cities">
+
+
+     {
+      data && data?.map((item , index) => {
+        return <WeatherCard key={index} data={item} />
+      })
+     }
+
+        </ul>
       </div>
     </section>
   );
