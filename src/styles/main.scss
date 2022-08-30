@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -30,3 +32,21 @@ form {
     justify-content: start;
 
 }
+
+.error {
+    background-image: url("../assets/we.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:  black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 2rem;
+    font-family: 'Silkscreen', cursive;
+    & p{
+            margin-top:  4rem;
+    }
+   
+}
+

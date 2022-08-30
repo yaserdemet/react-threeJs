@@ -6,7 +6,7 @@ const Base = () => {
   return (
     <div>
         <Main />
-        <WeatherCard />
+        {/* <WeatherCard /> */}
     </div>
   )
 }

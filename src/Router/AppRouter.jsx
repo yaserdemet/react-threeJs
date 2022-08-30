@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Base from "../pages/Base";
+import Error from "../pages/Error";
 
 const AppRouter = () => {
   return (
