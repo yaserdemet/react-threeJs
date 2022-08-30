@@ -8,16 +8,14 @@ import { Button } from "@mui/material";
 import main from "../styles/main.scss";
 import { useRef } from "react";
 import { useNavigate, Navigate } from "react-router";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-  
-
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 const Main = () => {
   const navigate = useNavigate();
   const ref = useRef();
-
+  const [animationParent] = useAutoAnimate()
   const { searchText, setSearchText, getData, data, setData, error, setError } =
     useWeatherContext();
   // ? üzerine cift tıkla ctrl cift space
@@ -26,16 +24,12 @@ const Main = () => {
     setSearchText(e.target.value);
   };
 
-
-
   const handleSubmit = (e) => {
-    if(!searchText){
-      toast.error(("Invalid City")
-      )
-    
+   
+
+    if (!searchText) {
+      toast.error("Invalid City");
     }
-
-
 
     e.preventDefault();
     getData();
@@ -50,38 +44,36 @@ const Main = () => {
 
   return (
     <section className="main">
-    
-          <form onSubmit={handleSubmit}>
-         
-            <TextField
-              id="outlined-basic"
-              autoFocus
-              sx={{ color: "white" }}
-              onChange={handleChange}
-              value={searchText}
-              label="City"
-              variant="outlined"
-              ref={ref}
-            />
-            <Button
-              variant="outlined"
-              color="warning"
-              type="submit"
-              sx={{ color: "white" }}
-            >
-              SUBMIT
-            </Button>
-            <span className="msg"></span>
-          </form>
+      <form onSubmit={handleSubmit} ref={animationParent}>
+        <TextField
+          id="outlined-basic"
+          autoFocus
+          sx={{ color: "white" }}
+          onChange={handleChange}
+          value={searchText}
+          label="City"
+          variant="outlined"
+          ref={ref}
+        />
+        <Button
+          variant="outlined"
+          color="warning"
+          type="submit"
+          sx={{ color: "white" }}
+        >
+          SUBMIT
+        </Button>
+        <span className="msg"></span>
+      </form>
 
-          <div className="container main-card">
-            {data &&
-              data?.map((item, index) => {
-                return <WeatherCard key={index} data={item} />;
-              })}
-          </div>
-        
-          <ToastContainer />
+      <div className="container main-card">
+        {data &&
+          data?.map((item, index) => {
+            return <WeatherCard key={index} data={item} />;
+          })}
+      </div>
+
+      <ToastContainer />
     </section>
   );
 };

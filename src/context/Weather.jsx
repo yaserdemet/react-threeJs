@@ -23,10 +23,15 @@ const Weather = ({ children }) => {
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=${units}`;
     try {
+
+
+
+
       const response = await axios.get(url);
       if (response.status == 200) {
         const { main, name, sys, weather, id } = response.data;
         let iconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+
         setData([
            {
             name,
@@ -39,7 +44,8 @@ const Weather = ({ children }) => {
           ...data,
         // ? burada gelen değerin öne yazması için eski datayı sona attık
         ]);
-
+       
+        
         //* buradaki islem kiritik. üst üste yazması için öncelikle array deki veriyi  spread ile açtım. daha sonra gelen verileri üstüne yazdım.
       }
     } catch (err) {
@@ -47,6 +53,7 @@ const Weather = ({ children }) => {
     }
   };
   console.log(data);
+  
 
   return (
     <WeatherContext.Provider
@@ -58,6 +65,7 @@ const Weather = ({ children }) => {
         setData,
         setError,
         error,
+      
       }}
     >
       {children}

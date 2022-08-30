@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Base from "../pages/Base";
+import Details from "../pages/Details";
 import Error from "../pages/Error";
 
 const AppRouter = () => {
@@ -15,7 +16,8 @@ const AppRouter = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Base />} />
-          <Route path="error" element={<Error />} />
+          <Route path="/error" element={<Error />} />
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
       </BrowserRouter>
     </div>
