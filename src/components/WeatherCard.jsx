@@ -55,16 +55,15 @@ export default function WeatherCard({ data }) {
 
   function capitalizeWords(arr) {
     let x = arr.split(" ")
-    return x.map(element => {
-      return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase() + " "
-    });
+    return x.map(element => element.charAt(0).toUpperCase() + element.slice(1).toLowerCase() + " "
+    );
   }
 
   return (
-    <Card sx={{ maxWidth: 345 }} className="card">
+    <Card sx={{ maxWidth: 345 }} className="cardt">
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: "#be88a9" }} aria-label="recipe">
             {sys.country}
           </Avatar>
         }
@@ -96,7 +95,7 @@ export default function WeatherCard({ data }) {
         </Typography>
         <Button onClick={() => setClick(!click)}>
               {
-                click ? "More Info" : "Less Info"
+                !click ? "More Info" : "Less Info"
               }
               
 

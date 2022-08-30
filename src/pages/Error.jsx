@@ -2,9 +2,12 @@ import React from "react";
 import { TbError404Off } from "react-icons/tb";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import useEffect from "react"
 
 const Error = () => {
   const navigate = useNavigate();
+
+
   return (
     <div className="error">
       <p>

@@ -28,8 +28,7 @@ const Weather = ({ children }) => {
         const { main, name, sys, weather, id } = response.data;
         let iconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
         setData([
-          ...data,
-          {
+           {
             name,
             sys,
             weather,
@@ -37,6 +36,8 @@ const Weather = ({ children }) => {
             iconUrl,
             main,
           },
+          ...data,
+        // ? burada gelen değerin öne yazması için eski datayı sona attık
         ]);
 
         //* buradaki islem kiritik. üst üste yazması için öncelikle array deki veriyi  spread ile açtım. daha sonra gelen verileri üstüne yazdım.

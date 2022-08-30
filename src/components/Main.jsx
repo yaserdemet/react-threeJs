@@ -8,6 +8,10 @@ import { Button } from "@mui/material";
 import main from "../styles/main.scss";
 import { useRef } from "react";
 import { useNavigate, Navigate } from "react-router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
+
 
 
 const Main = () => {
@@ -22,7 +26,17 @@ const Main = () => {
     setSearchText(e.target.value);
   };
 
+
+
   const handleSubmit = (e) => {
+    if(!searchText){
+      toast.error(("Invalid City")
+      )
+    
+    }
+
+
+
     e.preventDefault();
     getData();
     setSearchText("");
@@ -36,11 +50,9 @@ const Main = () => {
 
   return (
     <section className="main">
-      {error ? (
-        <Navigate to="error" />
-      ) : (
-        <>
+    
           <form onSubmit={handleSubmit}>
+         
             <TextField
               id="outlined-basic"
               autoFocus
@@ -68,8 +80,8 @@ const Main = () => {
                 return <WeatherCard key={index} data={item} />;
               })}
           </div>
-        </>
-      )}
+        
+          <ToastContainer />
     </section>
   );
 };
