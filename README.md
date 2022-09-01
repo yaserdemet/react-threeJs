@@ -1,4 +1,4 @@
-## Description
+### React Weather App
 
 ![]()
 
@@ -35,7 +35,7 @@
 
 📌 Deployment with Vercel and Netlify
 
-
+⛅ You can use [OpenWeather Api](https://openweathermap.org/) for your app to get apiKey
 
 ## Available Scripts
 
