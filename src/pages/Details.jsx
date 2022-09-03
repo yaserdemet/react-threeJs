@@ -10,9 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -32,16 +30,25 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function Details() {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(true);
+  const [animationParent] = useAutoAnimate();
   const { id } = useParams();
   console.log(id);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const location = useLocation();
   const detail = location.state;
   console.log(detail);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const capitilize = (str) => {
+    let x = str.split(" ");
+    let y = x.map((item) => {
+      return item[0].toUpperCase() + item.slice(1).toLowerCase() + " ";
+    });
+    return y;
   };
 
   return (
@@ -52,6 +59,7 @@ export default function Details() {
         alignItems: "center",
         height: "90vh",
       }}
+      className="cont"
     >
       <Card sx={{ maxWidth: 345 }} className="cardt">
         <CardHeader
@@ -81,9 +89,7 @@ export default function Details() {
             &nbsp;&nbsp;&nbsp;
           </Typography>
         </CardContent>
-        <Button variant="contained" 
-        sx={{marginLeft : "1rem"}}color="primary"
-        onClick={() => navigate("/")}>Back</Button>
+
         <CardActions disableSpacing>
           <ExpandMore
             expand={expanded}
@@ -91,13 +97,32 @@ export default function Details() {
             aria-expanded={expanded}
             aria-label="show more"
           >
-            <ExpandMoreIcon />
+            {/* <ExpandMoreIcon />
+             */}
           </ExpandMore>
+          <Collapse ref={animationParent} in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph>
+                <ul>
+                  <li> Humidity : {detail.main.humidity}</li>
+                  <li>Pressure : {detail.main.pressure}</li>
+                  {/* <li>Description : {detail.weather[0].description}</li> */}
+                  <li>
+                    Description : {capitilize(detail.weather[0].description)}
+                  </li>
+                </ul>
+              </Typography>
+            </CardContent>
+            <Button
+              variant="contained"
+              sx={{ marginLeft: "1rem", marginBottom: "2rem" }}
+              color="primary"
+              onClick={() => navigate("/")}
+            >
+              Back
+            </Button>
+          </Collapse>
         </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-       
-        </Collapse>
-       
       </Card>
     </div>
   );

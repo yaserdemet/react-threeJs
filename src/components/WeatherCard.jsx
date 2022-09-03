@@ -25,6 +25,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function WeatherCard({ data }) {
   const [animationParent] = useAutoAnimate();
+  
   const navigate = useNavigate();
   const { iconUrl, main, title, weather, name, sys, id } = data;
   const [expanded, setExpanded] = React.useState(false);
@@ -55,8 +56,9 @@ export default function WeatherCard({ data }) {
   }
 
   return (
-    <Card sx={{ maxWidth: 345 }} className="cardt">
+    <Card   sx={{ maxWidth: 345 }} className="cardt">
       <CardHeader
+      ref={animationParent}
         avatar={
           <Avatar sx={{ bgcolor: "#be88a9" }} aria-label="recipe">
             {sys.country}
@@ -88,7 +90,7 @@ export default function WeatherCard({ data }) {
             {Math.round(main.temp)}
           </strong>
         </Typography>
-        <Button onClick={() => setClick(!click)}>
+        {/* <Button onClick={() => setClick(!click)}>
           {!click ? "More Info" : "Less Info"}
         </Button>
         {click && (
@@ -97,7 +99,7 @@ export default function WeatherCard({ data }) {
             <li>Pressure : {main.pressure}</li>
             <li>Description : {capitalizeWords(weather[0].description)}</li>
           </ul>
-        )}
+        )} */}
       </CardContent>
     </Card>
   );
