@@ -1,9 +1,9 @@
 ### React Weather App
 
-![]()
+![Animation](https://user-images.githubusercontent.com/99739515/188310727-0f779e0e-00dd-4f5a-b06a-80fb16a81454.gif)
 
-[🛒click here to see page](
-)
+
+[⛅click here to see page](https://react-weather-app-sigma-silk.vercel.app)
 
 
 ## Problem Statement
@@ -29,9 +29,9 @@
 
 📌 3rd Part Libraries ( Toastify, Axios )
 
-📌 Material Ui (Slider,AppBar etc)
+📌 Styling with Material Ui
 
-📌 Hide apiKeys in .evn file
+📌 Hide apiKeys in .env file
 
 📌 Deployment with Vercel and Netlify
 
