@@ -27,7 +27,7 @@
 
 📌 React AutoAnimate
 
-📌 3rd Part Libraries ( Toastify, Axios )
+📌 3rd Part Libraries ( Toastify, Axios, AutoAnimation )
 
 📌 Styling with Material Ui
 
