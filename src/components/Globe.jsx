@@ -43,7 +43,7 @@ function Globe() {
   return (
     <div>
       <ReactGlobe
-        height="80vh"
+        height="100vh"
         width="100vw"
         markers={markers}
         options={{
@@ -54,13 +54,13 @@ function Globe() {
           enableCameraAutoRotate: true,
           enableCameraRotate: true,
           enableCameraZoom: true,
-
-          cameraDistanceRadiusScale: 2,
+          cameraDistanceRadiusScale: 5,
           cameraMaxDistanceRadiusScale: 10,
           ambientLightColor: "grey",
           ambientLightIntensity: 1,
         }}
       />
+      
     </div>
   );
 }
