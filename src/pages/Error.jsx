@@ -18,11 +18,11 @@ const Error = () => {
           <TbError404Off />
         </span>
       </p>
-      {/* <div>
-        <Button variant="contained" onClick={() => navigate(-2)}>
+      <div>
+        <Button variant="contained" style={{color : "warning", marginTop : "4rem" , marginLeft : "3rem"}}  onClick={() => navigate(-2)}>
           Go Back
         </Button>
-      </div> */}
+      </div>
     </div>
   );
 };

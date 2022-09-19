@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ReactGlobe from "react-globe";
 import Navbar from "./Navbar";
+import { useWeatherContext } from "../context/Weather";
 
 function Globe() {
+const { animations, animationSequence, setAnimationSequence } = useWeatherContext();
   const markers = [
     {
       id: "marker1",
@@ -41,11 +43,15 @@ function Globe() {
       value: 80,
     },
   ];
+
+
+  
   return (
     <div>
         <Navbar />
       <ReactGlobe
         height="100vh"
+        animations={animations}
         width="100vw"
         markers={markers}
         options={{

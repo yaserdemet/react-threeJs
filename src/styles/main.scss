@@ -41,12 +41,23 @@ form {
     color:  black;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items :flex-start;
     font-size: 2rem;
     font-family: 'Silkscreen', cursive;
     & p{
             margin-top:  4rem;
     }
    
+}
+
+@media screen and (max-width : 720px){
+
+    .error {
+        display:  flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+    
 }
 

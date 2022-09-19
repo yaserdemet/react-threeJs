@@ -20,6 +20,7 @@ const AppRouter = () => {
           <Route path="/base" element={<Base />} />
           <Route path="/error" element={<Error />} />
           <Route path="/details/:id" element={<Details />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </div>
