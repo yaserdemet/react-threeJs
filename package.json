@@ -1,5 +1,6 @@
 {
   "name": "react-weather",
+  "start": "rimraf ./build && react-scripts --expose-gc --max_old_space_size=4096 start",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
