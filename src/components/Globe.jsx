@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactGlobe from "react-globe";
+import Navbar from "./Navbar";
 
 function Globe() {
   const markers = [
@@ -42,6 +43,7 @@ function Globe() {
   ];
   return (
     <div>
+        <Navbar />
       <ReactGlobe
         height="100vh"
         width="100vw"

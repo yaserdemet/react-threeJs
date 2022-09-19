@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import Globe from "./Globe";
+import Navbar from "./Navbar";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -45,9 +46,10 @@ const Main = () => {
 
   return (
     <section className="main">
-     
-      <form onSubmit={handleSubmit} ref={animationParent}>
+     {/* <Navbar /> */}
+      <form  onSubmit={handleSubmit} ref={animationParent}>
         <TextField
+     
           id="outlined-basic"
           autoFocus
           sx={{ color: "white" }}
@@ -76,7 +78,7 @@ const Main = () => {
       </div>
 
       <ToastContainer />
-      <Globe />
+    
     </section>
   );
 };

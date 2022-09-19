@@ -17,6 +17,7 @@ const AppRouter = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Earth />} />
+          <Route path="/base" element={<Base />} />
           <Route path="/error" element={<Error />} />
           <Route path="/details/:id" element={<Details />} />
         </Routes>
