@@ -56,6 +56,9 @@ export default function WeatherCard({ data }) {
   }
 
   return (
+    <div className="cardz">
+
+   
     <Card   sx={{ maxWidth: 345 }} className="cardt">
       <CardHeader
       ref={animationParent}
@@ -102,5 +105,6 @@ export default function WeatherCard({ data }) {
         )} */}
       </CardContent>
     </Card>
+    </div>
   );
 }
