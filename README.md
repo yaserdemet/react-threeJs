@@ -1,6 +1,7 @@
-### React Weather App
+### React-ThreeJs Weather App
 
-![Animation](https://user-images.githubusercontent.com/99739515/188310727-0f779e0e-00dd-4f5a-b06a-80fb16a81454.gif)
+
+![Animation](https://user-images.githubusercontent.com/99739515/191304833-6e9b8956-d9e2-4b84-8e01-f0928194b0b4.gif)
 
 
 [⛅click here to see page](https://react-weather-app-sigma-silk.vercel.app)
@@ -12,6 +13,9 @@
 
 
 ### At the end of the project, following topics are to be covered;
+📌 ThreeJs
+
+📌 React Globe
 
 📌 Props and State Logic
 
@@ -31,25 +35,36 @@
 
 📌 Styling with Material Ui
 
-📌 Hide apiKeys in .env file
-
 📌 Deployment with Vercel and Netlify
 
 ⛅ You can use [OpenWeather Api](https://openweathermap.org/) for your app to get apiKey
 
-## Available Scripts
+### How to add React Globe in your project;
+ 
+    "react-globe": "^5.0.2",
+    "react-globe.gl": "^2.22.3",
+    "three": "0.118.3"
+#### In your component;
+```
+import ReactGlobe from "react-globe";
 
-In the project directory, you can run:
+ <ReactGlobe
+        height="100vh"
+        animations={animations}
+        width="100vw"
+        markers={markers}
+        options={{
+          cameraAutoRotateSpeed: 1,
+          cameraRotateSpeed: 0.5,
+          enableCameraAutoRotate: true,
+          enableCameraRotate: true,
+          enableCameraZoom: true,
+          cameraDistanceRadiusScale: 5,
+          cameraMaxDistanceRadiusScale: 10,
+          ambientLightColor: "grey",
+          ambientLightIntensity: 1,
+        }}
+      />
+      
+```
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
