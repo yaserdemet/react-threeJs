@@ -57,11 +57,12 @@ export default function Details() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "90vh",
+        height: "100vh",
+        backgroundColor : "black" 
       }}
       className="cont"
     >
-      <Card sx={{ maxWidth: 345 }} className="cardt">
+      <Card sx={{ maxWidth: 345}}  className="cardt">
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
