@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-- This project aims to create Weather App with Material UI.
+- This project aims to create Weather App with Material UI and ThreeJs.
 
 
 ### At the end of the project, following topics are to be covered;
