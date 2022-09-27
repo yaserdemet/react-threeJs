@@ -33,7 +33,7 @@
 
 📌 3rd Part Libraries ( Toastify, Axios, AutoAnimation )
 
-📌 Styling with Material Ui
+📌 Styling with Material Ui and SASS
 
 📌 Deployment with Vercel and Netlify
 
