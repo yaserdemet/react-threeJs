@@ -33,6 +33,8 @@ const Main = () => {
       toast.error("Invalid City");
     }
 
+    
+
     e.preventDefault();
     getData();
     setSearchText("");
