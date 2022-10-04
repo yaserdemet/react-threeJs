@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
-import useForecast from "../hooks/useForecast"
+import useForecast from "../hooks/useForecast";
 
 export const WeatherContext = createContext();
 
@@ -12,15 +12,12 @@ export const useWeatherContext = () => {
 };
 
 const Weather = ({ children }) => {
-  const [animationSequence, setAnimationSequence] = useState()
+  const [animationSequence, setAnimationSequence] = useState();
   const [searchText, setSearchText] = useState();
-  const  [data, values] = useForecast(searchText)
-  const {getData , setData , error , setError} = values
+  const [data, values] = useForecast(searchText);
+  const { getData, setData, error, setError } = values;
 
   // ? üzerine cift tıkla ctrl cift space
-  
-
-
 
   // const getData = async () => {
   //   let apiKey = process.env.REACT_APP_API_KEY;
@@ -29,9 +26,6 @@ const Weather = ({ children }) => {
 
   //   let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=${units}`;
   //   try {
-
-
-
 
   //     const response = await axios.get(url);
   //     if (response.status == 200) {
@@ -50,8 +44,7 @@ const Weather = ({ children }) => {
   //         ...data,
   //       // ? burada gelen değerin öne yazması için eski datayı sona attık
   //       ]);
-       
-        
+
   //       //* buradaki islem kiritik. üst üste yazması için öncelikle array deki veriyi  spread ile açtım. daha sonra gelen verileri üstüne yazdım.
   //     }
   //   } catch (err) {
@@ -60,62 +53,61 @@ const Weather = ({ children }) => {
   // };
   // console.log(data);
 
-
-  let animations = []
+  let animations = [];
   switch (animationSequence) {
-    case 'singapore':
+    case "singapore":
       animations = [
         {
           coordinates: [1.3521, 103.8198],
           focusAnimationDuration: 3000,
           focusDistanceRadiusScale: 2,
-          focusEasingFunction: ['Linear', 'None'],
+          focusEasingFunction: ["Linear", "None"],
         },
-      ]
-      break
-    case 'world':
+      ];
+      break;
+    case "world":
       animations = [
         {
           coordinates: [1.3521, 103.8198],
           focusAnimationDuration: 3000,
           focusDistanceRadiusScale: 2,
-          focusEasingFunction: ['Linear', 'None'],
+          focusEasingFunction: ["Linear", "None"],
         },
         {
           coordinates: [39.9042, 116.4074],
           focusAnimationDuration: 3000,
           focusDistanceRadiusScale: 2,
-          focusEasingFunction: ['Cubic', 'InOut'],
+          focusEasingFunction: ["Cubic", "InOut"],
         },
         {
           coordinates: [37.773972, -122.431297],
           focusAnimationDuration: 3000,
           focusDistanceRadiusScale: 2,
-          focusEasingFunction: ['Back', 'InOut'],
+          focusEasingFunction: ["Back", "InOut"],
         },
         {
           coordinates: [40.73061, -73.935242],
           focusAnimationDuration: 3000,
           focusDistanceRadiusScale: 2,
-          focusEasingFunction: ['Circular', 'InOut'],
+          focusEasingFunction: ["Circular", "InOut"],
         },
         {
           coordinates: [51.5074, 0.1278],
           focusAnimationDuration: 3000,
           focusDistanceRadiusScale: 2,
-          focusEasingFunction: ['Quadratic', 'InOut'],
+          focusEasingFunction: ["Quadratic", "InOut"],
         },
         {
           coordinates: [1.3521, 103.8198],
           focusAnimationDuration: 5000,
           focusDistanceRadiusScale: 4,
-          focusEasingFunction: ['Linear', 'None'],
+          focusEasingFunction: ["Linear", "None"],
         },
-      ]
-      break
+      ];
+      break;
     default:
-      animations = []
-    }
+      animations = [];
+  }
 
   return (
     <WeatherContext.Provider
@@ -127,10 +119,9 @@ const Weather = ({ children }) => {
         setData,
         setError,
         error,
-        animations ,
+        animations,
         animationSequence,
-        setAnimationSequence
-      
+        setAnimationSequence,
       }}
     >
       {children}
