@@ -1,10 +1,10 @@
-### React-ThreeJs Weather App
+<p align="center">React-ThreeJs Weather App</p>
 
 
 ![Animation](https://user-images.githubusercontent.com/99739515/191304833-6e9b8956-d9e2-4b84-8e01-f0928194b0b4.gif)
 
 
-[⛅click here to see page](https://react-weather-app-sigma-silk.vercel.app)
+[⛅click here to see detail of page](https://react-weather-app-sigma-silk.vercel.app)
 
 
 ## Problem Statement
