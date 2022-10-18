@@ -8,14 +8,28 @@ const useForecast = (searchText) => {
 
 
     const getData = async () => {
+    const accessToken = "accessTokenCheck"
     let apiKey = process.env.REACT_APP_API_KEY;
     let units = "metric";
     let lang = "tr";
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=${apiKey}&units=${units}`;
 
+    //? axios.interceptors.request.use(
+    //?   config => {
+    //?     config.headers.authorization = `Bearer ${accessToken}`;
+    //?     return config
+    //?   },
+    // ?  error => {
+    //?     return Promise.reject(error)
+    //?   }
+    //? )
+
 
     try {
+
+     
+
       const response = await axios.get(url);
       if (response.status == 200) {
         const { main, name, sys, weather, id } = response.data;
