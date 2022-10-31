@@ -40,6 +40,8 @@
 ⛅ You can use [OpenWeather Api](https://openweathermap.org/) for your app to get apiKey
 
 ### How to add React Globe in your project;
+
+#### Strongly adviced to use these versions
  
     "react-globe": "^5.0.2",
     "react-globe.gl": "^2.22.3",
